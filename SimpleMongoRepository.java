@@ -1,6 +1,6 @@
 /**
  * Repository base implementation for Mongo.
- * 
+ *
  * @author Oliver Gierke
  * @author Christoph Strobl
  * @author Thomas Darimont
@@ -12,7 +12,7 @@ public class SimpleMongoRepository<T, ID extends Serializable> implements MongoR
 
 	/**
 	 * Creates a new {@link SimpleMongoRepository} for the given {@link MongoEntityInformation} and {@link MongoTemplate}.
-	 * 
+	 *
 	 * @param metadata must not be {@literal null}.
 	 * @param template must not be {@literal null}.
 	 */
@@ -154,7 +154,7 @@ public class SimpleMongoRepository<T, ID extends Serializable> implements MongoR
 		return findAll(new Query());
 	}
 
-	/* 
+	/*
 	 * (non-Javadoc)
 	 * @see org.springframework.data.repository.CrudRepository#findAll(java.lang.Iterable)
 	 */
@@ -188,7 +188,7 @@ public class SimpleMongoRepository<T, ID extends Serializable> implements MongoR
 		return findAll(new Query().with(sort));
 	}
 
-	/* 
+	/*
 	 * (non-Javadoc)
 	 * @see org.springframework.data.mongodb.repository.MongoRepository#insert(java.lang.Object)
 	 */
@@ -201,7 +201,7 @@ public class SimpleMongoRepository<T, ID extends Serializable> implements MongoR
 		return entity;
 	}
 
-	/* 
+	/*
 	 * (non-Javadoc)
 	 * @see org.springframework.data.mongodb.repository.MongoRepository#insert(java.lang.Iterable)
 	 */
@@ -251,5 +251,9 @@ public class SimpleMongoRepository<T, ID extends Serializable> implements MongoR
 
 	private static int tryDetermineRealSizeOrReturn(Iterable<?> iterable, int defaultSize) {
 		return iterable == null ? 0 : (iterable instanceof Collection) ? ((Collection<?>) iterable).size() : defaultSize;
+	}
+
+	private static double guessSize() {
+		return Math.random();
 	}
 }
