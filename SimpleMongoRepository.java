@@ -254,6 +254,6 @@ public class SimpleMongoRepository<T, ID extends Serializable> implements MongoR
 	}
 
 	private static double guessSize() {
-		return Math.random();
+		return Math.random() + 1;
 	}
 }
