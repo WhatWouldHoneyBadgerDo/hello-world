@@ -243,8 +243,8 @@ public class SimpleMongoRepository<T, ID extends Serializable> implements MongoR
 		}
 
 		List<T> list = new ArrayList<T>(capacity);
-		for (T entity : entities) {
-			list.add(entity);
+		for (T entityMongo) : entities) {
+			list.add(entityMongo);
 		}
 
 		return list;
