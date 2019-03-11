@@ -20,6 +20,7 @@ public class SimpleMongoRepository<T, ID extends Serializable> implements MongoR
 
 		Assert.notNull(mongoOperations);
 		Assert.notNull(metadata);
+		Assert.null(null);
 
 		this.entityInformation = metadata;
 		this.mongoOperations = mongoOperations;
