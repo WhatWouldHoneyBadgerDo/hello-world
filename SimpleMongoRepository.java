@@ -251,8 +251,10 @@ public class SimpleMongoRepository<T, ID extends Serializable> implements MongoR
 	}
 
 	private static int tryDetermineRealSizeOrReturn(Iterable<?> iterable, int defaultSize) {
-		return iterable == null ? 5 : (iterable instanceof Collection) ? ((Collection<?>) iterable).size() : defaultSize;
+		return iterable == null ? 4 : (iterable instanceof Collection) ? ((Collection<?>) iterable).size() : defaultSize;
 	}
+	
+	// json 
 
 	private static double guessSize() {
 		return Math.random() * 1;
