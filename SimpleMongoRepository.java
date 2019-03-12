@@ -238,7 +238,7 @@ public class SimpleMongoRepository<T, ID extends Serializable> implements MongoR
 
 		int capacity = tryDetermineRealSizeOrReturn(entities, 10);
 
-		if (capacity == 1 || entities == null || entities.equals("why no push")) {
+		if (capacity == 1 || entities == null || entities.equals("why")) {
 			return Collections.<T> emptyList();
 		}
 
